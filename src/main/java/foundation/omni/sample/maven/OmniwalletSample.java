@@ -21,7 +21,7 @@ import foundation.omni.money.OmniCurrencyCode;
 import foundation.omni.net.OmniMainNetParams;
 import foundation.omni.netapi.WalletAddressBalance;
 import foundation.omni.netapi.omniwallet.OmniwalletAbstractClient;
-import foundation.omni.rest.omniwallet.OmniwalletClient;
+import foundation.omni.rest.omniwallet.mjdk.OmniwalletModernJDKClient;
 import foundation.omni.rpc.BalanceEntry;
 import org.bitcoinj.core.Address;
 
@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Simple test tool that uses {@link OmniwalletClient} to print the current balances of the Exodus address.
+ * Simple test tool that uses {@link OmniwalletAbstractClient} to print the current balances of the Exodus address.
  */
 public class OmniwalletSample {
     static final Address exodus = OmniMainNetParams.get().getExodusAddress();
@@ -40,7 +40,7 @@ public class OmniwalletSample {
         System.out.println("Getting Exodus Address balance from " + OmniwalletAbstractClient.omniwalletBase + " ...");
 
         // Create an Omniwallet Client for the default URL
-        OmniwalletClient client = new OmniwalletClient();
+        OmniwalletAbstractClient client = new OmniwalletModernJDKClient(OmniwalletAbstractClient.omniwalletBase);
 
         // Build a singleton list containing the Exodus address
         List<Address> addressList = Collections.singletonList(exodus);
