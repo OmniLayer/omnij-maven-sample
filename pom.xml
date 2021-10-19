@@ -16,6 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <omnij.version>0.5.18</omnij.version>
     <slf4j.version>2.0.0-alpha5</slf4j.version>
+    <native.maven.plugin.version>0.9.6</native.maven.plugin.version>
   </properties>
 
   <repositories>
@@ -76,4 +77,44 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <!-- This native profile is experimental and can be removed or used at your own risk -->
+    <profile>
+      <id>native</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.graalvm.buildtools</groupId>
+            <artifactId>native-maven-plugin</artifactId>
+            <version>${native.maven.plugin.version}</version>
+            <extensions>true</extensions>
+            <executions>
+              <execution>
+                <id>build-native</id>
+                <goals>
+                  <goal>build</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+              <execution>
+                <id>test-native</id>
+                <goals>
+                  <goal>test</goal>
+                </goals>
+                <phase>test</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <imageName>omnij-omniwallet-sample</imageName>
+              <mainClass>foundation.omni.sample.maven.OmniwalletSample</mainClass>
+              <buildArgs>
+                <buildArg>--no-fallback</buildArg>
+                <buildArg>-H:ReflectionConfigurationFiles=../graal-reflection-config.json</buildArg>
+              </buildArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>

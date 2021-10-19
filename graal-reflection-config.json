@@ -1,0 +1,46 @@
+[
+  {
+    "name" : "foundation.omni.netapi.omniwallet.json.RevisionInfo",
+    "allPublicMethods" : true,
+    "allPublicFields" : true,
+    "allPublicConstructors" : true
+  },
+  {
+    "name" : "foundation.omni.netapi.omniwallet.json.AddressVerifyInfo",
+    "allPublicMethods" : true,
+    "allPublicFields" : true,
+    "allPublicConstructors" : true
+  },
+  {
+    "name" : "foundation.omni.netapi.omniwallet.json.OmniwalletAddressBalance",
+    "allPublicMethods" : true,
+    "allPublicFields" : true,
+    "allPublicConstructors" : true
+  },
+  {
+    "name" : "foundation.omni.netapi.omniwallet.json.OmniwalletAddressPropertyBalance",
+    "allPublicMethods" : true,
+    "allPublicFields" : true,
+    "allPublicConstructors" : true
+  },
+  {
+    "name" : "foundation.omni.netapi.omniwallet.json.OmniwalletPropertiesListResponse",
+    "allPublicMethods" : true,
+    "allPublicFields" : true,
+    "allPublicConstructors" : true
+  },
+  {
+    "name" : "foundation.omni.netapi.omniwallet.json.OmniwalletPropertyInfo",
+    "allPublicMethods" : true,
+    "allPublicFields" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredClasses" : true
+  },
+  {
+    "name" : "foundation.omni.netapi.omniwallet.json.OmniwalletPropertyInfo$Issuance",
+    "allPublicMethods" : true,
+    "allPublicFields" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredClasses" : true
+  }
+]
