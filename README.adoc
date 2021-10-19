@@ -1,11 +1,10 @@
 = OmniJ Sample Maven Project
 
-image:https://github.com/OmniLayer/omnij-maven-sample/actions/workflows/maven.yml/badge.svg["Build Status", link="https://github.com/OmniLayer/omnij-maven-sample/actions/workflows/maven.yml"]
+image:https://github.com/OmniLayer/omnij-maven-sample/actions/workflows/maven.yml/badge.svg["Build Status", link="https://github.com/OmniLayer/omnij-maven-sample/actions/workflows/maven.yml"] image:https://github.com/OmniLayer/omnij-maven-sample/actions/workflows/graalvm.yml/badge.svg["Build Status", link="https://github.com/OmniLayer/omnij-maven-sample/actions/workflows/graalvm.yml"]
 
 == Overview
 
 A sample/starter project that uses the Maven build system.
-
 
 == Cloning from Github
 
@@ -16,8 +15,8 @@ A sample/starter project that uses the Maven build system.
 
 === Setup
 
-. Install JDK 8 or later. (JDK 17 is recommended)
-. Install Maven. (Maven 3.6 or later is recommended)
+. Install JDK 11 or later. (JDK 17 is recommended)
+. Install Maven. (Maven 3.8 or later is recommended)
 
 === Build Instructions
 
@@ -28,4 +27,24 @@ To compile and test:
 or, to run the app:
 
 * `mvn compile exec:java`
+
+
+== Build Instructions for Native Image
+
+NOTE:: native-image builds of **OmniJ** are experimental. If you don't have solid experience with **GraalVM** tools, it is not yet recommended.
+
+=== Setup
+
+. Install GraalVM 21.2.0 (Java 11 version) or later.
+. Install Maven. (Maven 3.8 or later is recommended)
+
+=== Build Instructions
+
+To compile the native image
+
+* `mvn -Pnative -DskipTests package`
+
+after compiling the native tool can be run with:
+
+* `./target/omnij-omniwallet-sample`
 
